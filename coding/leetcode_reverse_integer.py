@@ -5,33 +5,47 @@ class Solution:
         """
         Given a 32-bit signed integer, reverse the digits
         """
-        import sys
+        # Trap the trivial case.
+        if x == 0: return 0
 
-        sign = 1
-        if x < 0:
-            sign = -1
-        x *= sign
+        # Store the sign of the original number as a unit value.
+        sign = int(x / abs(x))
+        x = sign * x
 
-        # First idea is to do this in decimal, but I suspect it will be
-        # relatively expensive in terms of time (and perhaps space).
+        ## First attempt, pop last digit onto a new list then reassemble.
         #result = []
         #while x:
-        #    result.append(x%10)
+        #    result.append(str(x%10))
         #    x //= 10
-        #''.join(result)
+        #reversed_x = int(''.join(result))
 
-        # Second idea is to use bit-shifting to construct the reversed
-        # number in binary.
+        # Or convert to a string, reverse the string, then convert back.
+        reversed_x = int(str(x)[::-1])
 
-        # A third ideas is to convert to a string, reverse the string,
-        # then convert back.
-        x_reversed = sign * int(''.join(str(x)[::-1]))
+        ## Another try, this time keeping everything as an integer.
+        #reversed_x = 0
+        #order = -1
+        #
+        #x1, x2 = x, x
+        #
+        #while x1:
+        #    order += 1
+        #    x1 //= 10
+        #
+        #while x2:
+        #    digit = x2 % 10
+        #    reversed_x += digit * (10**order)
+        #    order -= 1
+        #    x2 //= 10
 
-        if x_reversed > sys.getsizeof(x): return 0
+        # Check for overflow condition on the problem.
+        if reversed_x > 2**31: return 0
 
-        return x_reversed
+        # Return with appropriate sign.
+        return sign * reversed_x
 
-
-# 536 / 1032 test cases passed.
-#     Status: Wrong Answer
-
+# Submission Detail
+# 1032 / 1032 test cases passed.
+# Status: Accepted
+# Runtime: 40 ms
+# Memory Usage: 13 MB
