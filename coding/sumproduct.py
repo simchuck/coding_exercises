@@ -1,6 +1,6 @@
 def sumproduct(list1, list2):
     """
-    Returns the sum of products for each item from the given lists.
+    Returns the sum of products of corresponding items from the given lists.
     """
     if not len(list1) == len(list2):
         raise IndexError
@@ -14,6 +14,7 @@ if __name__ == '__main__':
     print(sumproduct(list1, list2))
 
 
+# Tests -----------------------------------------------------------------------
 import pytest
 def test_different_size_lists():
     """
