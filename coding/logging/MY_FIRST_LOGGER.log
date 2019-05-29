@@ -1,5 +1,0 @@
-[2019-05-23 07:52:20,417:MY_FIRST_LOGGER:try_logging:68:DEBUG] This is a DEBUG message.
-[2019-05-23 07:52:20,418:MY_FIRST_LOGGER:try_logging:69:INFO] This is a INFO message.
-[2019-05-23 07:52:20,418:MY_FIRST_LOGGER:try_logging:70:WARNING] This is a WARNING message.
-[2019-05-23 07:52:20,418:MY_FIRST_LOGGER:try_logging:71:ERROR] This is a ERROR message.
-[2019-05-23 07:52:20,418:MY_FIRST_LOGGER:try_logging:72:CRITICAL] This is a CRITICAL message.
