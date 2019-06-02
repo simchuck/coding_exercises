@@ -63,8 +63,3 @@ def test_many_positives():
     expected = 1
     result = smallest_positive(parameter_list)
     assert result == expected
-
-
-
-
-
